@@ -1,0 +1,6 @@
+{
+  "name": "最小生成树与图论优化实验室",
+  "description": "专业级最小生成树 (MST) 与图论运筹优化交互实验平台，集成 Kruskal / Prim / 破圈法双范式分步推导、割集与成环沙盒、六大真实工业案例、Python/NetworkX 代码引擎与 AI 拓扑脆弱性诊断。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
