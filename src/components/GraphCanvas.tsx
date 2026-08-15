@@ -423,29 +423,6 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({
           <Trash2 className="w-3.5 h-3.5" />
           <span>删除</span>
         </button>
-
-        <div className="w-[1px] h-4 bg-[#E2E4E8] mx-0.5" />
-
-        {/* 图形居中 Button */}
-        <button
-          id="btn-center-graph"
-          onClick={handleCenterGraph}
-          className="px-2.5 py-1.5 rounded-md text-xs font-semibold flex items-center gap-1.5 transition text-blue-700 bg-blue-50 hover:bg-blue-100 border border-blue-200 shadow-2xs"
-          title="自动居中对齐当前拓扑图形并适配视口 (Center Graph)"
-        >
-          <Focus className="w-3.5 h-3.5 text-blue-600" />
-          <span>图形居中</span>
-        </button>
-
-        {/* Layout quick arranges */}
-        <button
-          onClick={applyCircleLayout}
-          disabled={isHierarchyView}
-          className="p-1.5 rounded-md text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition disabled:opacity-40"
-          title="环形对齐排布"
-        >
-          <Layers className="w-3.5 h-3.5" />
-        </button>
       </div>
 
       {/* Top Center Floating Metric Badges */}
@@ -458,8 +435,17 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({
         </span>
       </div>
 
-      {/* Top Right Zoom and Pan Controls */}
+      {/* Top Right Zoom, Layout and Pan Controls */}
       <div className="absolute top-3 right-3 z-20 flex items-center gap-1 bg-white/95 backdrop-blur-md p-1 rounded-lg border border-[#E2E4E8] shadow-sm">
+        <button
+          onClick={applyCircleLayout}
+          disabled={isHierarchyView}
+          className="p-1.5 rounded-md text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition disabled:opacity-40"
+          title="环形对齐排布 (Circle Layout)"
+        >
+          <Layers className="w-3.5 h-3.5" />
+        </button>
+        <div className="w-[1px] h-3.5 bg-[#E2E4E8] mx-0.5" />
         <button
           onClick={() => setZoom((z) => Math.min(2.5, z + 0.15))}
           className="p-1.5 rounded-md text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition"
@@ -475,6 +461,7 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({
           <ZoomOut className="w-3.5 h-3.5" />
         </button>
         <button
+          id="btn-center-graph"
           onClick={handleCenterGraph}
           className="p-1.5 rounded-md text-blue-700 hover:bg-blue-50 transition flex items-center gap-1"
           title="图形居中并适配视口 (Center Graph)"

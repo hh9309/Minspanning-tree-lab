@@ -11,6 +11,7 @@ import { TheoryModal } from "./components/TheoryModal";
 import { CodeEngineModal } from "./components/CodeEngineModal";
 import { AIDiagnosisModal } from "./components/AIDiagnosisModal";
 import { ReportModal } from "./components/ReportModal";
+import { BottomStatusBar } from "./components/BottomStatusBar";
 
 import { CASE_STUDIES } from "./utils/caseStudies";
 import {
@@ -294,6 +295,9 @@ export function App() {
           </div>
         </div>
       </main>
+
+      {/* Bottom Global Status Bar (Left-to-Right Full Module) */}
+      <BottomStatusBar graph={graph} solverResult={solverResult} />
 
       {/* Modals Container */}
       <DataEditorModal
